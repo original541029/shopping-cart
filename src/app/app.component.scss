@@ -170,16 +170,3 @@ button.submit:hover {background: #006ad0;}
 .lightBox .container {
   background: white;
 }
-
-.pagination .item {
-  color: #dadde1;display:inline-block;
-  text-decoration: none;width: 23px;line-height: 23px;
-  border: solid 1px #dadde1;
-  text-align: center;font-size: 13px;
-}
-.pagination .item + * {margin-left: 5px;}
-.pagination .item:hover,
-.pagination .item.active {
-  border: solid 1px #007bf2;background: #007bf2;
-  color:#dadde1;
-}

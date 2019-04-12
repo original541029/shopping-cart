@@ -8,16 +8,22 @@ import { ShopCartService } from './shop-cart.service';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private shopCartService: ShopCartService) {
-    this.aryDatas = this.shopCartService.aryItem();
-  }
   title = 'shopping-cart';
-  aryDatas = [];
+  aryDatas;
   addlist = [];
   qtyUpdate = 1;
+  startNum: Number;
+  constructor(private shopCartService: ShopCartService) {
+    this.startNum = 1;
+    this.aryDatas = this.shopCartService.aryItem(1);
+  }
+  changePage($event) {
+    this.aryDatas = this.shopCartService.aryItem($event);
+    console.log(this.aryDatas);
+  }
   ngOnInit(): void {
     this.addlist.push({ 'total': 0 });
-    for (const val of this.aryDatas['default']) {
+    for (const val of this.aryDatas) {
       val.qty = 1;
     }
   }

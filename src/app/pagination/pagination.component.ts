@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ShopCartService } from '.././shop-cart.service';
 @Component({
   selector: 'app-pagination',
@@ -6,15 +6,25 @@ import { ShopCartService } from '.././shop-cart.service';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
+  @Output() numPage: EventEmitter<Number> = new EventEmitter();
   aryData = [];
   numTotal: number;
-  constructor(private shopCartService: ShopCartService) { }
-
-  ngOnInit() {
-    this.aryData = this.shopCartService.aryItem();
+  constructor(private shopCartService: ShopCartService) {
+    this.aryData = this.shopCartService.totalPage();
     const len = this.aryData['default'].length;
     this.numTotal = Math.floor(len / 5) + 1;
-    console.log(this.numTotal);
+  }
+  counter(i: number) {
+    return new Array(i);
+  }
+  ngOnInit() {
+    // this.aryData = this.shopCartService.aryItem(1,6);
+
+  }
+  pageChanged($event) {
+    const num = Number($event.target.textContent);
+    this.numPage.emit(num);
+    this.shopCartService.aryItem(num);
   }
 
 }

@@ -3,7 +3,7 @@
   <div class="product-list">
     <div class="cart-title">藍 & 育慈的電子商城 </div>
     <div class="scrollItem">
-      <div class="item" *ngFor="let aryData of aryDatas.default , let i=index;">
+      <div class="item" *ngFor="let aryData of aryDatas , let i=index;">
         <div class="pic" icon="search" [style.background-image]="'url(' + aryData.picture + ')'">
           <img src="https://proveg.com/wp-content/uploads/2018/04/Foodplate.jpg" alt="">
         </div>
@@ -22,12 +22,8 @@
       </div><!-- item end -->
     </div><!-- scroll item end -->
     <div class="list-foot">
-      <!-- <app-pagination></app-pagination> -->
-      <ul class="pagination">
-        <li href="" class="item active"></li>
-        <li href="" class="item">2</li>
-        <li href="" class="item">3</li>
-      </ul><!-- pagination end -->
+      <app-pagination (numPage)="changePage($event)"></app-pagination>
+  <!-- pagination end -->
       <div class="right">
         <small>總金額</small>${{addlist[0].total}}
       </div>
