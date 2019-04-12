@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as project from '../assets/pros-list.json';
+import { ShopCartService } from './shop-cart.service';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,18 @@ import * as project from '../assets/pros-list.json';
 })
 
 export class AppComponent implements OnInit {
+  constructor(private shopCartService: ShopCartService) {
+    this.aryDatas = this.shopCartService.aryItem();
+  }
   title = 'shopping-cart';
-  aryDatas = project;
+  aryDatas = [];
   addlist = [];
   qtyUpdate = 1;
   ngOnInit(): void {
-    console.log(this.aryDatas);
     this.addlist.push({ 'total': 0 });
-    for (const val of project['default']) {
-      console.log(val);
+    for (const val of this.aryDatas['default']) {
       val.qty = 1;
     }
-    console.log(this.addlist);
   }
 
   cartQty(row, type) {
@@ -46,8 +46,6 @@ export class AppComponent implements OnInit {
     };
     this.addlist[0]['total'] = this.addlist[0]['total'] + subtotal;
     this.addlist.push(obj);
-    console.log(this.addlist);
-
   }
   delCart(num, idx) {
     this.addlist.splice(idx, 1);
