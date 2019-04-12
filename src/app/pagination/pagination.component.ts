@@ -24,7 +24,6 @@ export class PaginationComponent implements OnInit {
   pageChanged($event) {
     const num = Number($event.target.textContent);
     this.numPage.emit(num);
-    this.shopCartService.aryItem(num);
   }
 
 }
