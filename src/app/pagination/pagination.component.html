@@ -1,3 +1,3 @@
 <ul class="pagination" >
-  <li class="item active" *ngFor="let in of counter(this.numTotal) ;let i = index"  (click)="pageChanged($event)">{{i+1}}</li>
+  <li class="item active" *ngFor="let  page of this.aryPage ;let i = index" [class.active]="page.active" (click)="pageChanged(page)">{{ page.num }}</li>
 </ul><!-- pagination end -->
