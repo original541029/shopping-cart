@@ -17,12 +17,13 @@ export class AppComponent implements OnInit {
   }
   changePage($event) {
     this.aryDatas = this.shopCartService.aryItem($event);
-    this.addlist.push({ 'total': 0 });
+
     for (const val of this.aryDatas) {
       val.qty = Number(1);
     }
   }
   ngOnInit(): void {
+    this.addlist.push({ 'total': 0 });
   }
   alerttea($event) {
     console.log($event);
