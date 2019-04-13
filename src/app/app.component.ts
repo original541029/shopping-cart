@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   cartQty(row, type) {
     console.log(row);
     console.log(type);
-    (row.qty === 1 && type === -1) ? row.qty = 1 : row.qty = (row.qty || 0) + Number(type);
+    (row.qty === 1 && type === -1) ? row.qty = 1 : row.qty = (Number(row.qty) || 0) + Number(type);
   }
   addCart(event) {
     const name = event.name;
