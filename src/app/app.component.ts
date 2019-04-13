@@ -12,24 +12,24 @@ export class AppComponent implements OnInit {
   aryDatas;
   addlist = [];
   qtyUpdate = 1;
-  startNum: Number;
   constructor(private shopCartService: ShopCartService) {
     this.changePage(1);
   }
   changePage($event) {
     this.aryDatas = this.shopCartService.aryItem($event);
+    this.addlist.push({ 'total': 0 });
     for (const val of this.aryDatas) {
-      val.qty = 1;
+      val.qty = Number(1);
     }
   }
   ngOnInit(): void {
-    this.addlist.push({ 'total': 0 });
-    for (const val of this.aryDatas) {
-      val.qty = 1;
-    }
   }
-
+  alerttea($event) {
+    console.log($event);
+  }
   cartQty(row, type) {
+    console.log(row);
+    console.log(type);
     (row.qty === 1 && type === -1) ? row.qty = 1 : row.qty = (row.qty || 0) + Number(type);
   }
   addCart(event) {
