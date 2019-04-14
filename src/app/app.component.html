@@ -32,12 +32,6 @@
   <div class="buy-list">
     <div class="cart-title">購買清單</div>
     <div class="list-container">
-      <!-- <div class="list">
-        <div class="row">Mcconnell</div>
-        <div class="row">1</div>
-        <div class="row">$100</div>
-        <a class="row del"></a>
-      </div> -->
       <div class="list" *ngFor="let addlists of addlist,let i=index">
         <div class="row" *ngIf="addlists.name">{{addlists.name}}</div>
         <div class="row" *ngIf="addlists.name">{{addlists.qty}}</div>
