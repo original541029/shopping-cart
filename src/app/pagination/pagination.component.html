@@ -1,7 +1,7 @@
-<ul class="pagination" >
-  <li class="item" icon="arrow-left"></li>
+<ul class="pagination"  >
+  <li class="item" icon="arrow-left" (click)="pre(this.aryPage)" ></li>
   <span class="paginationMask">
-  <li class="item active" *ngFor="let  page of this.aryPage ;let i = index" [class.active]="page.active" (click)="pageChanged(page)">{{ page.num }}</li>
+  <li class="item active" #input *ngFor="let  page of this.aryPage ;let i = index"  [class.active]="page.active" (click)="pageChanged(page)">{{ page.num }}</li>
   </span>
-  <li class="item" icon="arrow-right"></li>
+  <li class="item" icon="arrow-right" (click)="next(this.aryPage)"></li>
 </ul><!-- pagination end -->

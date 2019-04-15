@@ -15,16 +15,26 @@ export class PaginationComponent implements OnInit {
   numTotal: number;
   isActive: boolean;
   aryPage: Page[];
+  pageStart;
   constructor(private shopCartService: ShopCartService) {
     this.aryData = this.shopCartService.totalPage();
     const len = this.aryData['default'].length;
     this.numTotal = Math.floor(len / 5) + 1;
+    this.page(1);
+  }
+  page(numStart) {
+    this.pageStart = 1;
     const ary = [];
-    for (let i = 0; i < this.numTotal; i++) {
-      if (i + 1 === 1) {
-        ary.push({ num: i + 1, active: true });
+    for (let i = numStart; i < numStart + 5; i++) {
+      if (i % 5 === 0) {
+        for (let k = i; k < (i + 5); k++) {
+          console.log(`${i / 5}_____${k - 5}`);
+        }
+      }
+      if (i === numStart) {
+        ary.push({ num: i, active: true });
       } else {
-        ary.push({ num: i + 1, active: false });
+        ary.push({ num: i, active: false });
       }
 
     }
@@ -33,6 +43,7 @@ export class PaginationComponent implements OnInit {
   ngOnInit() {
   }
   pageChanged(page: Page) {
+    console.log(page);
     this.aryPage = this.aryPage.map(item => {
       if (item.active === true) {
         item.active = !item.active;
@@ -41,10 +52,26 @@ export class PaginationComponent implements OnInit {
         page.active = !page.active;
         this.numPage.emit(page.num);
       }
-      console.log(item);
       return item;
     });
 
+  }
+  pre(event) {
+    console.log(event);
+
+    const num = event[0].num - 5;
+    if (num < 1) {
+      return;
+    }
+    event[4].num = num;
+    this.pageChanged(event[4]);
+    this.page(num);
+  }
+  next(event) {
+    const num = event[4].num + 1;
+    event[4].num = num;
+    this.pageChanged(event[4]);
+    this.page(num);
   }
 
 }

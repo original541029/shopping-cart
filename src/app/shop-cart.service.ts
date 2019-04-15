@@ -21,7 +21,7 @@ export class ShopCartService {
         for (let k = i; k < (i + 5); k++) {
           if (this.data['default'][k - 5] !== undefined) {
             aryTemp.push(this.data['default'][k - 5]);
-            console.log(`${i}_____${k - 5}`);
+            // console.log(`${i / 5}_____${k - 5}`);
           }
         }
       }
