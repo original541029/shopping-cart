@@ -25,12 +25,14 @@ export class PaginationComponent implements OnInit {
   page(numStart) {
     this.pageStart = 1;
     const ary = [];
-    for (let i = numStart; i < numStart + 5; i++) {
-      if (i % 5 === 0) {
-        for (let k = i; k < (i + 5); k++) {
-          console.log(`${i / 5}_____${k - 5}`);
-        }
-      }
+    let len = numStart + 5;
+
+    if (len > this.numTotal) {
+      len = this.numTotal + 1;
+    }
+    console.log(len);
+    console.log(numStart);
+    for (let i = numStart; i < len; i++) {
       if (i === numStart) {
         ary.push({ num: i, active: true });
       } else {
@@ -43,7 +45,6 @@ export class PaginationComponent implements OnInit {
   ngOnInit() {
   }
   pageChanged(page: Page) {
-    console.log(page);
     this.aryPage = this.aryPage.map(item => {
       if (item.active === true) {
         item.active = !item.active;
@@ -63,13 +64,18 @@ export class PaginationComponent implements OnInit {
     if (num < 1) {
       return;
     }
-    event[4].num = num;
-    this.pageChanged(event[4]);
+    event[0].num = num;
+    this.pageChanged(event[0]);
     this.page(num);
   }
   next(event) {
     const num = event[4].num + 1;
+    if (num  > this.numTotal) {
+      console.log(num);
+      return;
+    }
     event[4].num = num;
+
     this.pageChanged(event[4]);
     this.page(num);
   }
