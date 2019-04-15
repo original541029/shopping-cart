@@ -25,22 +25,26 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.addlist.push({ 'total': 0 });
   }
-  cartQty(row, type = 0) {
+  cartQty(row, type) {
     // const temp = row.data;
-    let value = !row.target ? row.qty : row.target.value
-    if (typeof value === 'string') {
-      value = parseInt(value.replace(/(\d+)|\D+/g, '$1'))
-    }
-    console.log(row.qty, value, type)
-    value = value + type
-    value = value <= 0 ? 1 : value
-    if (row.target) row.target.value = value
-    else row.qty = value
+    console.log(row);
+    // if (type === undefined) {
+    //   if (parseInt(temp) === NaN) {
+    //    console.log(temp);
+    //     alert('a');
+    //   }
+    // }
+
+
+
+    (row.qty === 1 && type === -1) ? row.qty = 1 : row.qty = Number((row.qty) || 0) + Number(type);
+
   }
   addCart(event) {
     const name = event.name;
     const qty = event.qty;
     const price = event.price;
+
     const subtotal = price * qty;
     for (const val of this.addlist) {
       if (name === val.name) {
