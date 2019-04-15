@@ -26,23 +26,16 @@ export class AppComponent implements OnInit {
     this.addlist.push({ 'total': 0 });
   }
   cartQty(row, type) {
-    // const temp = row.data;
     console.log(row);
-    // if (type === undefined) {
-    //   if (parseInt(temp) === NaN) {
-    //    console.log(temp);
-    //     alert('a');
-    //   }
-    // }
-
-
-
-    (row.qty === 1 && type === -1) ? row.qty = 1 : row.qty = Number((row.qty) || 0) + Number(type);
-
+    console.log(type);
+    (row.qty === 1 && type === -1) ? row.qty = 1 : row.qty = Number((row.qty) || 1) + Number(type);
   }
   addCart(event) {
     const name = event.name;
     const qty = event.qty;
+    if (isNaN(qty) || qty === 0) {
+      return;
+    }
     const price = event.price;
 
     const subtotal = price * qty;

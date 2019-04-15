@@ -14,7 +14,7 @@
           </div><!-- row end -->
           <div class="row number-group">
             <button class="buy-icon" icon="add" (click)="cartQty(aryData,1)"></button>
-            <input class="amount" type="number" [value]="aryData.qty" [(ngModel)]="aryData.qty" (input)="cartQty($event)" />
+            <input class="amount" type="text"  #input [(ngModel)]="aryData.qty" (input)="cartQty(aryData,0)" />
             <button class="buy-icon" icon="less" (click)="cartQty(aryData,-1)"></button>
           </div><!-- row end -->
           <div class="row price">${{aryData.price}}</div><!-- row end -->
