@@ -41,7 +41,6 @@ export class AppComponent implements OnInit {
     const name = event.name;
     const qty = event.qty;
     const price = event.price;
-
     const subtotal = price * qty;
     for (const val of this.addlist) {
       if (name === val.name) {
