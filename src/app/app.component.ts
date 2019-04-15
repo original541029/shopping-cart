@@ -25,9 +25,17 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.addlist.push({ 'total': 0 });
   }
-  cartQty(row, type) {
-    row.qty = 1;
-    (row.qty === 1 && type === -1) ? row.qty = 1 : row.qty = Number((row.qty) || 0) + Number(type);
+  cartQty(row, type = 0) {
+    // const temp = row.data;
+    let value = !row.target ? row.qty : row.target.value
+    if (typeof value === 'string') {
+      value = parseInt(value.replace(/(\d+)|\D+/g, '$1'))
+    }
+    console.log(row.qty, value, type)
+    value = value + type
+    value = value <= 0 ? 1 : value
+    if (row.target) row.target.value = value
+    else row.qty = value
   }
   addCart(event) {
     const name = event.name;
