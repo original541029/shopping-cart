@@ -57,7 +57,7 @@ export class PaginationComponent implements OnInit {
     });
 
   }
-  pre(event, type) {
+  pageGroupChanged(event, type) {
     console.log(event);
     let num;
     if (type === -5) {

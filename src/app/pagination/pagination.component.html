@@ -1,7 +1,7 @@
 <ul class="pagination"  >
-  <li class="item" icon="arrow-left" (click)="pre(this.aryPage,-5)" ></li>
+  <li class="item" icon="arrow-left" (click)="pageGroupChanged(this.aryPage,-5)" ></li>
   <span class="paginationMask">
   <li class="item active" #input *ngFor="let  page of this.aryPage ;let i = index"  [class.active]="page.active" (click)="pageChanged(page)">{{ page.num }}</li>
   </span>
-  <li class="item" icon="arrow-right" (click)="pre(this.aryPage,1)"></li>
+  <li class="item" icon="arrow-right" (click)="pageGroupChanged(this.aryPage,1)"></li>
 </ul><!-- pagination end -->
