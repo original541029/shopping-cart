@@ -57,26 +57,24 @@ export class PaginationComponent implements OnInit {
     });
 
   }
-  pre(event) {
+  pageGroupChanged(event, type) {
     console.log(event);
-
-    const num = event[0].num - 5;
-    if (num < 1) {
-      return;
+    let num;
+    if (type === -5) {
+      num = event[0].num + (type);
+      if (num < 1) {
+        return;
+      }
+      event[0].num = num;
+      this.pageChanged(event[0]);
+    } else {
+      num = event[4].num + type;
+      if (num > this.numTotal) {
+        return;
+      }
+      event[4].num = num;
+      this.pageChanged(event[4]);
     }
-    event[0].num = num;
-    this.pageChanged(event[0]);
-    this.page(num);
-  }
-  next(event) {
-    const num = event[4].num + 1;
-    if (num  > this.numTotal) {
-      console.log(num);
-      return;
-    }
-    event[4].num = num;
-
-    this.pageChanged(event[4]);
     this.page(num);
   }
 
