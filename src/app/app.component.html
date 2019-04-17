@@ -37,7 +37,7 @@
         <div class="row" *ngIf="addlists.name">{{addlists.name}}</div>
         <div class="row" *ngIf="addlists.name">{{addlists.qty}}</div>
         <div class="row" *ngIf="addlists.name">${{addlists.subtotal}}</div>
-        <a class="row del" *ngIf="addlists.name" (click)="delCart(addlists.subtotal,i)"></a>
+        <a class="row del" icon="remove" *ngIf="addlists.name" (click)="delCart(addlists.subtotal,i)"></a>
       </div><!-- list end -->
     </div><!-- list container end -->
     <div class="list-foot">

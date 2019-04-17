@@ -28,7 +28,6 @@
               "src/your-json-dir"
             ],
             "styles": [
-              "src/styles.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"            
             ],
             "scripts": []
@@ -84,9 +83,6 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.scss"
-            ],
             "scripts": [],
             "assets": [
               "src/favicon.ico",
