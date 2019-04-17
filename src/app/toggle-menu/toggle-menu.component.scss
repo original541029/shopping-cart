@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-$menuColor: #78cdce #f16767 #235bbd #97cc69 #507abd #6b408e;
+@import '../../assets/mixin.scss';
+
 .toggleMenuComponent {
   position: fixed; right: 0;top: 0;z-index: 4;
   > input {
@@ -18,8 +18,8 @@ $menuColor: #78cdce #f16767 #235bbd #97cc69 #507abd #6b408e;
     margin-left : auto;
     width       : 40px;
     padding     : 10px 0;
-    background-color: rgba(100,100,100,.3);
-    color : #fff;
+    background-color: colorOpacity(black, .3);
+    color : map-get($colorFont, white);
     text-align : center;
     cursor : pointer;
     position: absolute;
@@ -34,9 +34,9 @@ $menuColor: #78cdce #f16767 #235bbd #97cc69 #507abd #6b408e;
   }
   li {
     list-style-type : none;
-    border-top    : 1px solid #FFF;
+    border-top    : 1px solid map-get($colorFont, white);
     border-bottom : 1px solid #ddd;
-    background-color: #f4f5f6;
+    background-color:white;
     background-size : 200% 100%;
     background-position : 90% 0px;
     -webkit-transition : 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
@@ -44,7 +44,7 @@ $menuColor: #78cdce #f16767 #235bbd #97cc69 #507abd #6b408e;
     position: relative;
     &:before {
       content: "";display: block;height: 100%;width: 20px;
-      position: absolute;left: 0;top: 0;background: red;
+      position: absolute;left: 0;top: 0;background: map-get($colorFont, pink);
       transition: .3s;
     }
     @for $i from 1 through 6 {
@@ -65,7 +65,7 @@ $menuColor: #78cdce #f16767 #235bbd #97cc69 #507abd #6b408e;
   li a {
     display    : block;
     padding    : 15px 0;
-    color      : #454545;
+    color      : map-get($colorFont, black);
     text-align : center;
     font-family: 'Source Code Pro', sans-serif;
     text-decoration: none;
@@ -74,7 +74,7 @@ $menuColor: #78cdce #f16767 #235bbd #97cc69 #507abd #6b408e;
     position: relative; z-index: 1;
     font-size: 15px;
     &:hover {
-      color : #fff;
+      color : map-get($colorFont, white);
       -webkit-transition : color .1s;
       -moz-transition : color .1s;
     }

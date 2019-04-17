@@ -1,292 +1,86 @@
-$red: #fb887c;
-$green: #AFC7B9;
-$navy: #34495e;
+@import '../../assets/mixin.scss';
 
-@import url("https://www.markmurray.co/codepen/customstyle.css"), url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 .checkContainer {
-  background: white;
-  width: 80vw;
-  height: 80vh;
-  position: absolute;
-  top: 10vh;
-  left: 10vw;
-  overflow: hidden;
-  border-radius: 2px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  box-sizing: border-box;
-  font-size: 13px;
-  letter-spacing: 1px;
-  z-index: 1;
-  .backPage {
-    text-decoration: none;color: #349af0;text-align: left;
-  }
-  .left {
-    text-align: left;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .right {
-    text-align: right;
-  }
-
-  .container {
-    max-width: 1080px;
-    margin: 0 auto;
-    height: 100%;
-  }
-
+  @extend %content;
+  h1 {color: map-get($colorFont, black);text-align: center;margin: 1em 0;}
+  .backPage {text-decoration: none;color: #349af0;text-align: left;}
+  .container {margin: 0 auto;height: 100%;}
   .box {
     width: 49%;
-    background: #f3f3f3;
+    background: map-get($colorFont, lightGray);
     margin: 0 auto 2em auto;
     overflow: auto;
     padding: 1em;
     border-radius: 3px;
     display: inline-block;
     vertical-align: top;
-
-    &:first-child {
-      margin-right: 1%;
-    }
+    &:first-child {margin-right: 1%;}
   }
-
-  h1 {
-    color: #3a3a3a;
-    text-align: center;
-    margin: 1em 0;
-  }
-
   table {
-    border: none;
-    outline: none;
-    width: 100%;
+    border: none;outline: none;width: 100%;
     margin: 0.5em 0 1em;
-
-    tr.table-header {
+    tr {
+      &.table-header td {font-size: 0.7em;font-weight: bolder;}
+      &:nth-child(2n+2) {background: darken(#eee, 1%);}
       td {
-        font-size: 0.7em;
-        font-weight: bolder;
-      }
-    }
-
-    td {
-      padding: 0.75em 0.5em;text-align: center;
-    }
-
-    td:first-child {
-      text-align: left;
-    }
-
-    td:nth-child(3) {
-      text-align: center;
-    }
-
-    td:last-child,
-    td:nth-child(4) {
-      text-align: right;
-    }
-
-    tr:nth-child(2n+2) {
-      background: darken(#eee, 1%);
-    }
-  }
-
-  .searchButton {
-    border: 1px solid #e0e0e0;
-    background: #fff;
-    outline: none;
-    padding: 1em;
-    border-radius: 3px;
-    font-weight: 300;
-    font-size: 0.8em;
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
-    position: relative;
-  }
-
-  .margin-right {
-    margin-right: 1%;
-  }
-
-  .half {
-    width: 49.5%;
-    display: inline-block;
-
-    input {
-      width: 100%;
-    }
-  }
-
-  .half:first-child {
-    margin-right: 2%;
-  }
-
-  .selected {
-    text-decoration: line-through;
-    color: #aaa;
-  }
-
-  .dollar {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dollar input {
-    padding-left: 2em;
-  }
-
-  .dollar span {
-    position: absolute;
-    display: block;
-    padding: 3px 3px 3px 7px;
-    pointer-events: none;
-    left: 5px;
-    top: 13px;
-    color: #aaa;
-    z-index: 1;
-  }
-
-  .searchButton.full {
-    width: 100%;
-  }
-
-  .list {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-
-    ul {
-
-      li {
-        margin: 1em 0;
+        padding: 0.75em 0.5em;text-align: center;
+        &:first-child {text-align: left;}
+        &:nth-child(3) {text-align: center;}
+        &:last-child, &:nth-child(4) {text-align: right;}
       }
     }
   }
+}
 
-  .inventory h1 {
-    color: #3a3a3a;
-    padding-top: 5px;
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-
-  }
-
-  input[type='checkbox'] {
-    background: transparent;
-    border: 2px solid #3a3a3a;
-    padding: 0.2em;
-    font-size: 1em;
-  }
-
-  button.clear {
-    background: lighten($navy, 6%);
-    border-bottom: 4px solid darken($navy, 5%);
-    font-size: 15px;letter-spacing: 1px;padding: 12px 0;
-  }
-
-  button.clear:hover {
-    background: lighten($navy, 2%);
-    border-bottom: 2px solid darken($navy, 5%);
-  }
-
-  button {
-    margin: 0.25em 0;
-    display: block;
-    outline: none;
-    background: $red;
-    border: none;
-    padding: 1.1em;
-    border-radius: 6px;
-    width: 100%;
-    color: white;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-bottom: 4px solid darken($red, 5%);
-
-    &:hover {
-      border-bottom: 2px solid darken($red, 5%);
-      margin-bottom: 0.9em;
-    }
-
-  }
-
-  .cost {
-    margin-bottom: 1em;
-    clear: both;float: left;padding-top: 10px;
-
-    span {
-      padding: 0.5em;
-
-      &:first-child {
-        float: left;
-      }
-
-      &:nth-child(2) {
-        float: right;
-        vertical-align: baseline;
-      }
-    }
-  }
-
-  .total {
-
-    background: $red;
-    color: white;
-    font-weight: bolder;
-    border-radius: 5px;
-  }
-
-  #successMessage,
-  #errorMessage {
-    display: none;
-    text-align: center;
-    margin: 0.5em 0;
-
-  }
-
-  i {
-    vertical-align: baseline;
-    margin-right: 0.5em;
-    border-radius: 50%;
-    width: 0.5em;
-    height: 0.5em;
+.cost {
+  margin-bottom: 1em;clear: both;float: left;padding-top: 10px;
+  span {
     padding: 0.5em;
-    font-size: 0.8em;
-    color: white;
+    &:first-child {float: left;padding-left: 0;}
+    &:nth-child(2) {float: right;vertical-align: baseline;}
   }
-
-  i.icon-checkmark {
-    background: green;
+  .total {
+    background: map-get($colorFont, lightPink);
+    color: map-get($colorFont, white);
+    font-weight: bolder;border-radius: 5px;
   }
+}
 
-  i.icon-cross {
-    background: red;
+.noneCart {
+  letter-spacing: 1px;padding: 10px 0;
+}
+
+input[type='checkbox'] {
+  background: transparent;
+  border: 2px solid map-get($colorFont, black);
+  padding: 0.2em;
+  font-size: 1em;
+}
+
+button {
+  border-bottom: 4px solid darken(map-get($colorFont, lightPink), 5%);
+  margin: 0.25em 0;
+  display: block;
+  outline: none;
+  background: map-get($colorFont, lightPink);
+  border: none;
+  padding: 1.1em;
+  border-radius: 6px;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid darken(map-get($colorFont, lightPink), 5%);
+    margin-bottom: 0.9em;
   }
-
-  i.delete {
-    color: lighten($red, 8%);
-    background: transparent;
-    font-size: 1.1em;
-    vertical-align: sub;
-    cursor: pointer;
-
+  &.clear {
+    background: lighten(map-get($colorFont, navy), 6%);
+    border-bottom: 4px solid darken(map-get($colorFont, navy), 5%);
+    font-size: 15px;letter-spacing: 1px;padding: 12px 0;
     &:hover {
-      color: darken($red, 8%);
+      background: map-get($colorFont, navy);
+      border-bottom: 2px solid darken(map-get($colorFont, navy), 5%);
     }
-  }
-
-  #successMessage {
-    color: green;
-  }
-
-  #errorMessage {
-    color: red;
-  }
-
-  .noneCart {
-    letter-spacing: 1px;padding: 10px 0;
   }
 }
