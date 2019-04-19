@@ -11,17 +11,6 @@ module.exports = [[module.i, ".fa,.fab,.fal,.far,.fas{-moz-osx-font-smoothing:gr
 
 /***/ }),
 
-/***/ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/styles.scss":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss ***!
-  \**********************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = [[module.i, "\n@import url(\"https://fonts.googleapis.com/icon?family=Material+Icons\");\n/* You can add global styles to this file, and also import other style files */\nbody, html {\n  background: #e7e7eb;\n  width: 100vw;\n  height: 100vh;\n  overflow: hidden;\n  margin: 0;\n  padding: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9EOlxcc2hvcENhcnQvc3JjXFxzdHlsZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0Esc0VBQVk7QUFEWiw4RUFBQTtBQUVBO0VBQ0UsbUJBQW1CO0VBQUMsWUFBVztFQUFDLGFBQVk7RUFDNUMsZ0JBQWU7RUFBQyxTQUFRO0VBQUMsVUFBVSxFQUFBIiwiZmlsZSI6InNyYy9zdHlsZXMuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cbkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2ljb24/ZmFtaWx5PU1hdGVyaWFsK0ljb25zJyk7XG5ib2R5LCBodG1sIHtcbiAgYmFja2dyb3VuZDogI2U3ZTdlYjt3aWR0aDoxMDB2dztoZWlnaHQ6MTAwdmg7XG4gIG92ZXJmbG93OmhpZGRlbjttYXJnaW46MDtwYWRkaW5nOiAwO1xufSJdfQ== */", '', '']]
-
-/***/ }),
-
 /***/ "./node_modules/@fortawesome/fontawesome-free/css/all.min.css":
 /*!********************************************************************!*\
   !*** ./node_modules/@fortawesome/fontawesome-free/css/all.min.css ***!
@@ -561,44 +550,13 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/styles.scss":
-/*!*************************!*\
-  !*** ./src/styles.scss ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!../node_modules/postcss-loader/src??embedded!../node_modules/sass-loader/lib/loader.js??ref--14-3!./styles.scss */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/styles.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ 2:
-/*!********************************************************************************************!*\
-  !*** multi ./src/styles.scss ./node_modules/@fortawesome/fontawesome-free/css/all.min.css ***!
-  \********************************************************************************************/
+/*!**************************************************************************!*\
+  !*** multi ./node_modules/@fortawesome/fontawesome-free/css/all.min.css ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\shopCart\src\styles.scss */"./src/styles.scss");
 module.exports = __webpack_require__(/*! D:\shopCart\node_modules\@fortawesome\fontawesome-free\css\all.min.css */"./node_modules/@fortawesome/fontawesome-free/css/all.min.css");
 
 
